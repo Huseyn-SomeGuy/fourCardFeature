@@ -1,0 +1,200 @@
+/*Reseting*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*=========================================================================================================*/
+
+/*Fonts*/
+/*font-family: 'Poppins', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+/*=========================================================================================================*/
+
+/*  Colors
+#### Box colors
+
+- Red: hsl(0, 78%, 62%)
+- Cyan: hsl(180, 62%, 55%)
+- Orange: hsl(34, 97%, 64%)
+- Blue: hsl(212, 86%, 64%)
+
+### Text
+
+- Very Dark Blue: hsl(234, 12%, 34%)
+- Grayish Blue: hsl(229, 6%, 66%)
+- Very Light Gray: hsl(0, 0%, 98%)
+ */
+/*=========================================================================================================*/
+  /*Text heading color*/
+   $Very-Dark-Blue: hsl(234, 12%, 34%);
+   $Grayish-Blue: hsl(229, 6%, 66%);
+   $Very-Light-Gray: hsl(0, 0%, 98%);
+  /*box colors */
+
+   $Red: hsl(0, 78%, 62%);
+   $Cyan: hsl(180, 62%, 55%);
+   $Orange: hsl(34, 97%, 64%);
+   $Blue: hsl(212, 86%, 64%);
+/*=========================================================================================================*/
+
+:root{
+   font-size: 15px;
+   font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+   height: 100vh;
+   overflow: hidden;
+   background-color: $Very-Light-Gray;
+   overflow-y: auto;
+}
+.content {
+   max-width: 475px;
+   margin: 0 auto;
+
+		&__header {
+         margin: 4rem 0;
+         text-align: center;
+         color: $Very-Dark-Blue;
+		}
+
+		&__title {
+         font-size: 20px;
+         font-weight: 200;
+         margin-bottom: .7rem;
+		}
+
+		&__company-name {
+         font-size: 20px;
+         margin-bottom: .9rem;
+         font-weight: 700;
+		}
+
+		&__subtitle {
+         color: $Grayish-Blue;
+		}
+
+      &__cards{
+         margin-bottom: 4rem;
+      }
+
+      &__card--middle{
+         margin: 0 0 2rem 0;
+      }
+
+		&__card {
+         background: #fff;
+         margin-bottom: 2rem;
+         overflow: hidden;
+         border-radius: 5px;
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.12),
+                     0 0 10px rgba(0, 0, 0, 0.14);
+		}
+      &__card:last-child{
+         margin-bottom: 0;
+      }
+
+		&__cards-header {
+         padding: 1.5rem 2rem 0px;
+         color: $Very-Dark-Blue;
+         font-weight: 700;
+         font-size: 18px;
+         margin: 0px 0px .7rem 0px;
+
+		}
+
+		&__cards-subheader {
+         padding: 0px 2rem 0px;
+         color: $Grayish-Blue;
+         margin-bottom: 2rem;
+         line-height: 1.5rem;
+		}
+
+		&__cards-logo {
+         padding: 0px 2rem 0px;
+         display: flex;
+         justify-content: flex-end;
+         margin-bottom: 1rem;
+    
+		}
+}
+.container {
+   margin: 0 2rem;
+}
+.card-color-1 {
+   height: 3px;
+   background-color: $Cyan;
+}
+.card-color-2 {
+   height: 3px;
+   background-color: $Red;
+}
+.card-color-3{
+   height: 3px;
+   background-color: $Orange;
+}
+.card-color-4{
+   height: 3px;
+   background-color: $Blue;
+}
+
+
+@media(min-width: 1024px){
+   .content{
+      max-width: 1000px;
+
+      &__cards{
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         justify-content: center;
+         align-items: center;
+         column-gap: 2rem;
+
+      }
+      &__card{ 
+         width: 310px;
+
+      }
+      &__card:first-child{
+         margin: 0;
+      }
+      &__card--middle{
+         .content__card:first-child{
+            margin-bottom: 2rem;
+         }
+      }
+      
+   }
+}
